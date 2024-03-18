@@ -8710,8 +8710,161 @@ body {
 }
 
 /* code here */
-.wrap-menu-mb {
-  display: none;
+.header--center #logo {
+  text-align: left;
+  a {
+    display: inline-block;
+    position: relative;
+    top: -3px;
+    img {
+      width: 132px;
+      height: auto;
+    }
+  }
+}
+#inner-header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  .wrap-menu-mb {
+    display: block;
+    &.show {
+      display: block;
+    }
+    button {
+      display: none;
+      border: none;
+      background: none;
+      line-height: 0;
+      width: 24px;
+      position: relative;
+      padding: 0;
+      &.show {
+        display: block;
+        z-index: 10;
+      }
+    }
+    .wrap-list-menu-mb {
+      display: none;
+      position: absolute;
+      width: 280px;
+      padding: 107px 50px 30px 46px;
+      background-color: rgba(0, 0, 0, 0.9);
+      top: 0;
+      left: -15px;
+      z-index: 1;
+      &.show {
+        display: block;
+      }
+      .ul-parent {
+        color: #fff;
+        margin: 0;
+        li.title {
+          font-size: 15px;
+          font-weight: bold;
+          padding: 10px 0;
+          line-height: 1.5;
+          a {
+            position: relative;
+            &::after {
+              content: "";
+              display: block;
+              width: 7px;
+              height: 11px;
+              background: url("../images/icon-right.svg") no-repeat center;
+              background-size: contain;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              right: 0;
+            }
+          }
+        }
+        li.no-arr {
+          padding: 0;
+          &::after {
+            display: none;
+          }
+        }
+        a {
+          display: block;
+          color: #fff;
+        }
+        .ul-child {
+          margin: 0;
+          margin-bottom: 20px;
+          li {
+            a {
+              padding: 10px 0;
+              font-size: 10px;
+              font-weight: bold;
+              border-bottom: 1px solid #fff;
+              position: relative;
+              line-height: 1.5;
+              margin-bottom: 4.5px;
+              &:hover {
+                text-decoration: none;
+              }
+              &::after {
+                content: "";
+                display: block;
+                width: 7px;
+                height: 11px;
+                background: url("../images/icon-right.svg") no-repeat center;
+                background-size: contain;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.header-info {
+  height: 10px;
+  background: #f8bd32;
+}
+.wrap-nav {
+  margin: 0 0 2.5em;
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.15), 0 0 5px rgba(0, 0, 0, 0.1);
+  p.title {
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    padding: 15px 20px;
+    background: #000;
+    margin: 0;
+  }
+  nav {
+    padding: 15px 20px;
+    background: #fff;
+    ul {
+      li {
+        &:first-child {
+          a {
+            padding-top: 0;
+          }
+        }
+        a {
+          color: #000;
+          display: block;
+          padding: 10px 0;
+          font-size: 10px;
+          border-bottom: 1px solid #000;
+          font-weight: bold;
+
+          &:hover {
+            text-decoration: none;
+            color: #f8bd32;
+          }
+        }
+      }
+    }
+  }
 }
 .widget_search {
   display: none;
@@ -8858,99 +9011,35 @@ body {
   }
 }
 @media screen and (max-width: 640px) {
-  .wrap-menu-mb {
+  #inner-header {
     display: block;
-    button {
-      position: absolute;
-      top: 50%;
-      left: 15px;
-      transform: translateY(-50%);
-      display: none;
-      border: none;
-      background: none;
-      line-height: 0;
-      width: 24px;
+    line-height: 0;
+    position: unset;
+    #logo {
+      text-align: center;
       padding: 0;
-      &.show {
-        display: block;
-        z-index: 10;
+      a {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     }
-    .wrap-list-menu-mb {
+    .header-search {
       display: none;
-      position: absolute;
-      width: 280px;
-      padding: 107px 50px 30px 46px;
-      background-color: rgba(0, 0, 0, 0.9);
-      top: 0;
-      left: 0;
-      &.show {
-        display: block;
+    }
+    .wrap-menu-mb {
+      display: inline-block;
+      button {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
       }
-      .ul-parent {
-        color: #fff;
-        margin: 0;
-        li.title {
-          font-size: 15px;
-          font-weight: bold;
-          padding: 10px 0;
-          line-height: 1.5;
-          a {
-            position: relative;
-            &::after {
-              content: "";
-              display: block;
-              width: 7px;
-              height: 11px;
-              background: url("../images/icon-right.svg") no-repeat center;
-              background-size: contain;
-              position: absolute;
-              top: 50%;
-              transform: translateY(-50%);
-              right: 0;
-            }
-          }
-        }
-        li.no-arr {
-          padding: 0;
-          &::after {
-            display: none;
-          }
-        }
-        a {
-          display: block;
-          color: #fff;
-        }
-        .ul-child {
-          margin: 0;
-          margin-bottom: 20px;
-          li {
-            a {
-              padding: 10px 0;
-              font-size: 10px;
-              font-weight: bold;
-              border-bottom: 1px solid #fff;
-              position: relative;
-              line-height: 1.5;
-              margin-bottom: 4.5px;
-              &:hover {
-                text-decoration: none;
-              }
-              &::after {
-                content: "";
-                display: block;
-                width: 7px;
-                height: 11px;
-                background: url("../images/icon-right.svg") no-repeat center;
-                background-size: contain;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                right: 0;
-              }
-            }
-          }
-        }
+      .wrap-list-menu-mb {
+        right: unset;
+        left: 0;
+        z-index: 2;
       }
     }
   }
@@ -8993,6 +9082,7 @@ body {
     margin-top: 0;
   }
 }
+
 @media screen and (max-width: 480px) {
   .wrap-title-category {
     padding: 0;
