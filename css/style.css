@@ -9010,6 +9010,74 @@ body {
     }
   }
 }
+.footer {
+  background-color: #000;
+  border-bottom: 10px solid #f8bd32;
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    .logo {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 132px;
+        height: auto;
+      }
+    }
+    #footer-menu {
+      padding: 20px 10px;
+      display: flex;
+      text-align: left;
+      width: 50%;
+      gap: 50px;
+      .group-link {
+        .underline {
+          text-decoration: underline;
+        }
+        a {
+          font-size: 10px;
+          color: #fff;
+          line-height: 1;
+          text-decoration: none;
+          margin-bottom: 5px;
+          display: block;
+          line-height: 1;
+        }
+        p.title {
+          font-size: 10px;
+          color: #fff;
+          line-height: 1;
+          padding-bottom: 5px;
+          border-bottom: 1px solid #fff;
+          margin-bottom: 5px;
+        }
+        .coppy-right {
+          text-align: center;
+          font-size: 10px;
+          color: #fff;
+        }
+        a.arr-right {
+          width: 149px;
+          position: relative;
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 3px;
+            height: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            background: url("../images/arr-right-white.svg") no-repeat center;
+            background-size: contain;
+          }
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 640px) {
   #inner-header {
     display: block;
@@ -9080,6 +9148,38 @@ body {
   }
   .sidebar {
     margin-top: 0;
+  }
+  .footer {
+    .footer-inner {
+      flex-wrap: wrap;
+      width: 150px;
+      margin: 0 auto;
+      padding: 20px 0;
+      .logo {
+        width: 100%;
+        img {
+          width: 94px;
+        }
+      }
+      #footer-menu {
+        order: 1;
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 10px 0 0;
+        gap: 10px;
+        .group-link {
+          width: 100%;
+          line-height: 0;
+          &:first-child {
+            text-align: center;
+            padding-bottom: 5px;
+          }
+          .coppy-right {
+            margin-top: 5px;
+          }
+        }
+      }
+    }
   }
 }
 

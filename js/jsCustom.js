@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+$(document).ready(function () {
   $(".btn-menu-mb").click(function () {
     $(this).removeClass("show");
     $(".btn-close-mb").addClass("show");
